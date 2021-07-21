@@ -1,0 +1,34 @@
+.header{
+    display: flex;
+    padding: 10px;
+}
+.header button{
+    margin-right: 10px;
+    padding: 5px;
+}
+.add-product{
+    background: blue;
+    color: white;
+}
+.container{
+    padding: 10px;
+    margin-top: 20px;
+    background: rgb(243, 243, 243);
+    height: 100vh
+}
+.wrapper-label{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin-bottom: 10px;
+}
+.wrapper-label i{
+    color: red;
+    font-size: 12px;
+}
+.wrapper-label input{
+    padding: 3px;
+}
+.container h3{
+    text-align: center;
+}
