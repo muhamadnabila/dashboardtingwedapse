@@ -5,6 +5,9 @@ const outCome = require('./outCome')
 const used = require('./used')
 const asset = require('./asset')
 
+route.get('/', () => {
+    res.status(200).json({message: 'connect'})
+})
 route.use('/product', product)
 route.use('/transaction', transaction)
 route.use('/outCome', outCome)
