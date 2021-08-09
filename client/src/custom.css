@@ -1,0 +1,46 @@
+.flex1{
+    flex:1
+}
+.flex2{
+    flex:2
+}
+.flex3{
+    flex:3
+}
+.flex4{
+    flex:4
+}
+.flex5{
+    flex:5
+}
+.color-white{
+    color: white;
+    background-color: rgba(41, 41, 41, 0.658);
+}
+h2{
+    font-size: 16px;
+    margin: 5px 0;
+    width: fit-content;
+    padding: 2px;
+}
+@keyframes glowing {
+    0% { box-shadow: 0 0 -10px #c4a300; }
+    40% { box-shadow: 0 0 20px #c4a300; }
+    60% { box-shadow: 0 0 20px #c4a300; }
+    100% { box-shadow: 0 0 -10px #c4a300; }
+  }
+  
+.button-nav-active {
+    animation: glowing 1000ms infinite;
+}
+.button--date {
+    padding: 2px 10px;
+    border: 1px solid #d7d7d7;
+    cursor: pointer;
+    height: 38px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    color: black;
+    background-color: white;
+}

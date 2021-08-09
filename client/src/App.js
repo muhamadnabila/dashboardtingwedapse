@@ -1,79 +1,64 @@
 import './style.css';
+import './custom.css';
 import {useState, useEffect} from 'react'
+import AddProduct from './Views/AddProduct';
+import ProductManagement from './Views/ProductManagement';
+import UpdateStock from './Views/UpdateStock';
+import SellManagement from './Views/SellManagement';
+import OutCome from './Views/OutCome';
+import Used from './Views/Used';
+import Data from './Views/Data';
+import Header from './Components/Header';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useHistory
+  } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import NavigationProductManagement from './Components/navigationProductManagement'
+import "react-datepicker/dist/react-datepicker.css";
 
 function App() {
-  
-  const [viewPage, setViewPage] = useState('stokPupan')
-  const [inputNameProduct, setInputNameProduct] = useState('')
-  const [inputCategory, setInputCategory] = useState('')
-  const [inputHargaModalPak, setInputHargaModalPak] = useState(0)
-  const [inputJumlahProdukPak, setInputJumlahProdukPak] = useState(0)
-  const [inputHargaModalPcs, setInputHargaModalPcs] = useState(0)
-  const [inputJumlahProdukPcs, setInputJumlahProdukPcs] = useState(0)
 
-  function handleClickChangePage(page) {
-    setViewPage(page)
-  }
+  const [isPageActive, setIsPageActive] = useState('/')
+  const [startDate, setStartDate] = useState(new Date())
+  const [endDate, setEndDate] = useState(new Date())
+  const [triggerGetData, setTriggerGetData] = useState(true)
 
   return (
     <div>
-      <div className="header">
-        <button onClick={() => handleClickChangePage("stokPupan")}>Update Stok Tingwe Pupan</button>
-        <button onClick={() => handleClickChangePage("stokJambu")}>Update Stok Tingwe Jambu</button>
-        <button onClick={() => handleClickChangePage("penjualanPupan")}>Hitung Penjualan Tingwe Pupan</button>
-        <button onClick={() => handleClickChangePage("penjualanJambu")}>Hitung Penjualan Tingwe Jambu</button>
-        <button onClick={() => handleClickChangePage("tambahProduk")} className="add-product">Tambah Produk</button>
-      </div>
-
-    {/* ==================TAMBAH PRODUK================== */}
-      <div className="container">
-        <h3>TAMBAH PRODUK</h3>
-        <div className="wrapper-label">
-          <label>Nama Produk *</label>
-          <input 
-            autoFocus
-            onChange={(e) => setInputNameProduct(e.target.value)}
-            />
+      <Router>
+        <Header/>
+        <div className="container">
+          {isPageActive && <NavigationProductManagement isPageActive={isPageActive} setIsPageActive={setIsPageActive}/>}
+          <Switch>
+            <Route path="/addOutCome">
+              <OutCome setIsPageActive={setIsPageActive}/>
+            </Route>
+            <Route path="/data">
+              <Data triggerGetData={triggerGetData} setTriggerGetData={setTriggerGetData} startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate} isPageActive={isPageActive} setIsPageActive={setIsPageActive} />
+            </Route>
+            <Route path="/penjualan">
+              <SellManagement setIsPageActive={setIsPageActive}/>
+            </Route>
+            <Route path="/updateStock">
+              <UpdateStock setIsPageActive={setIsPageActive}/>
+            </Route>
+            <Route path="/addProduct">
+              <AddProduct setIsPageActive={setIsPageActive}/>
+            </Route>
+            <Route path="/used">
+              <Used setIsPageActive={setIsPageActive}/>
+            </Route>
+            <Route path="/">
+              <ProductManagement setIsPageActive={setIsPageActive}/>
+            </Route>
+          </Switch>
         </div>
-        <div className="wrapper-label">
-          <label>Kategori *</label>
-          <input
-            onChange={(e) => setInputCategory(e.target.value)}
-            />
-        </div>
-        <div className="wrapper-label">
-          <label>Harga Modal Produk (pak) <i>Isi Jika Pembelian Dalam Pak (DSM, RB, Marsbrand, Kertas, dll)</i></label>
-          <input
-            type="number"
-            onChange={(e) => setInputHargaModalPak(e.target.value)}
-            disabled={inputHargaModalPcs || inputJumlahProdukPcs}
-            />
-        </div>
-        <div className="wrapper-label">
-          <label>Jumlah Produk dalam 1 pak (optional) <i>Isi Jika Pembelian Dalam Pak (DSM, RB, Marsbrand, Kertas, dll)</i></label>
-          <input
-            type="number"
-            onChange={(e) => setInputJumlahProdukPak(e.target.value)}
-            disabled={inputHargaModalPcs || inputJumlahProdukPcs}
-            />
-        </div>
-        <div className="wrapper-label">
-          <label>Harga Modal Produk (satuan) <i>Isi Jika Pembelian Dalam Satuan (Aromatik, Pabrikan, Bako Daerah)</i> </label>
-          <input
-            type="number"
-            onChange={(e) => setInputHargaModalPcs(e.target.value)}
-            disabled={inputHargaModalPak || inputJumlahProdukPak}
-            />
-        </div>
-        <div className="wrapper-label">
-          <label>Jumlah Produk (satuan) <i>Isi Jika Pembelian Dalam Satuan (Aromatik, Pabrikan, Bako Daerah)</i></label>
-          <input
-            type="number"
-            onChange={(e) => setInputJumlahProdukPcs(e.target.value)}
-            disabled={inputHargaModalPak || inputJumlahProdukPak}
-            />
-        </div>
-      </div>
+      </Router>
+      <ToastContainer/>
     </div>
   );
 }
