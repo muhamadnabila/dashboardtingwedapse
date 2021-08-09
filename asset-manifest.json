@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/dashboardtingwedapse/static/css/main.6f17b4f8.chunk.css",
+    "main.js": "/dashboardtingwedapse/static/js/main.c8663417.chunk.js",
+    "main.js.map": "/dashboardtingwedapse/static/js/main.c8663417.chunk.js.map",
+    "runtime-main.js": "/dashboardtingwedapse/static/js/runtime-main.8ce64967.js",
+    "runtime-main.js.map": "/dashboardtingwedapse/static/js/runtime-main.8ce64967.js.map",
+    "static/css/2.c80e3fac.chunk.css": "/dashboardtingwedapse/static/css/2.c80e3fac.chunk.css",
+    "static/js/2.0541dc2b.chunk.js": "/dashboardtingwedapse/static/js/2.0541dc2b.chunk.js",
+    "static/js/2.0541dc2b.chunk.js.map": "/dashboardtingwedapse/static/js/2.0541dc2b.chunk.js.map",
+    "static/js/3.74d5c82e.chunk.js": "/dashboardtingwedapse/static/js/3.74d5c82e.chunk.js",
+    "static/js/3.74d5c82e.chunk.js.map": "/dashboardtingwedapse/static/js/3.74d5c82e.chunk.js.map",
+    "index.html": "/dashboardtingwedapse/index.html",
+    "static/css/2.c80e3fac.chunk.css.map": "/dashboardtingwedapse/static/css/2.c80e3fac.chunk.css.map",
+    "static/css/main.6f17b4f8.chunk.css.map": "/dashboardtingwedapse/static/css/main.6f17b4f8.chunk.css.map",
+    "static/js/2.0541dc2b.chunk.js.LICENSE.txt": "/dashboardtingwedapse/static/js/2.0541dc2b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8ce64967.js",
+    "static/css/2.c80e3fac.chunk.css",
+    "static/js/2.0541dc2b.chunk.js",
+    "static/css/main.6f17b4f8.chunk.css",
+    "static/js/main.c8663417.chunk.js"
+  ]
+}
