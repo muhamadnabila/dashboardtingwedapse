@@ -54,7 +54,7 @@ function ProductManagement({setIsPageActive}) {
                     <div className="flex1 table-list-product-td">Terpakai/Bonus <i onClick={()=> handleSort('totalUsed')}>↕️</i></div>
                     <div className="flex1 table-list-product-td">Harga Modal (pcs) </div>
                     <div className="flex1 table-list-product-td">Harga Retail (pcs) </div>
-                    {/* close for tingwe jambu <div className="flex1 table-list-product-td">Harga Cabang (pcs) </div> */}
+                    {/* <div className="flex1 table-list-product-td">Harga Cabang (pcs) </div> */}
                     <div className="flex1 table-list-product-td">Action</div>
                 </div>
                 <div className="table-list-product-tbody">
@@ -165,8 +165,7 @@ function Product({product, indexProduct, productList, setProductList}) {
                                 onChange={(e) => setDataProduct({...dataProduct, sellPriceRetail: e.target.value})}
                             />
                         </div>
-                        {/* close for tingwe jambu
-                        <div className="flex1 table-list-product-td">
+                        {/* <div className="flex1 table-list-product-td">
                             <input
                                 placeholder={dataProduct.sellPriceGrocery}
                                 value={dataProduct.sellPriceGrocery}
@@ -187,7 +186,7 @@ function Product({product, indexProduct, productList, setProductList}) {
                     <div className="flex1 table-list-product-td">{dataProduct.totalUsed}</div>
                     <div className="flex1 table-list-product-td">{convertRupiah(dataProduct.modalPrice)}</div>
                     <div className="flex1 table-list-product-td">{convertRupiah(dataProduct.sellPriceRetail)}</div>
-                    {/* close for tingwe jambu <div className="flex1 table-list-product-td">{convertRupiah(dataProduct.sellPriceGrocery)}</div> */}
+                    {/* <div className="flex1 table-list-product-td">{convertRupiah(dataProduct.sellPriceGrocery)}</div> */}
                     <div className="flex1 table-list-product-td">
                         <button className="btn-edit-product" onClick={() => setIsEditProduct(true)}>Edit</button>
                     </div>

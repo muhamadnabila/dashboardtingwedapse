@@ -103,8 +103,7 @@ function AddProduct({setIsPageActive}){
                     onChange={(e) => setSellPriceRetail(e.target.value)}
                     />
                 </div>
-                {/* close for tingwe jambu
-                 <div className="wrapper-label">
+                 {/* <div className="wrapper-label">
                 <label>Harga Jual Produk Cabang (per pcs)</label>
                 <input
                     value={sellPriceGrocery == 0 ? '' : sellPriceGrocery }

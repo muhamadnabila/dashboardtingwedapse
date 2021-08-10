@@ -138,7 +138,7 @@ function Product({product, indexProduct, productList, setProductList, date}) {
                 return
             }
             if(e.target.value == 10 || e.target.value % 10 == 0){
-                setCustomPrice(6000/10)
+                setCustomPrice(7000/10)
             }else if(e.target.value == 1){
                 setCustomPrice(1000)
             }else if(e.target.value == 2){
